@@ -1,6 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+
+import { Button } from 'antd';
+
+import './App.scss';
+import 'antd/dist/antd.css';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +22,7 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <Button type="primary">Primary</Button>
       </header>
     </div>
   );
