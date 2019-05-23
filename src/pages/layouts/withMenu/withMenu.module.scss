@@ -1,0 +1,20 @@
+.title { color: red; }
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas: "menu page";
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: #8ca0ff;
+}
+
+.page {
+  grid-area: page;
+  background-color: #c2c2c2;
+}
