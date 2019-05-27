@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import Billing from './pages/Billing';
+import Billing from './pages/billing/Billing';
 
 const App: React.FC = () => {
   return (

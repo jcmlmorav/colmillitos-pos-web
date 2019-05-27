@@ -1,8 +1,7 @@
 import React from 'react';
 import Styles from './withMenu.module.scss';
-import { Props } from '../../../types/billing';
 
-export default (Page: React.FC<Props>) => (
+export default (Page: React.FC) => (
   () => (
     <div className={Styles.container}>
       <div className={Styles.menu}>
@@ -12,7 +11,7 @@ export default (Page: React.FC<Props>) => (
           <li>Ventas</li>
         </ul>
       </div>
-      <Page className={Styles.page} />
+      <Page />
     </div>
   )
 );
