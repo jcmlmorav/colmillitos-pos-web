@@ -3,6 +3,7 @@ import withMenu from '../layouts/withMenu/withMenu';
 import withSidebar from '../layouts/withSidebar/withSidebar';
 import { Col, Input, Row } from 'antd';
 import ProductsList from '../../components/productsList/ProductsList';
+import FeaturedProduct from '../../components/FeaturedProduct';
 import Styles from './billing.module.scss';
 
 const Billing: React.FC = () => {
@@ -20,10 +21,38 @@ const Billing: React.FC = () => {
             className={Styles.search}
           />
         </Col>
-      </Row>
-      <Row>
         <Col span={24}>
           <ProductsList />
+        </Col>
+      </Row>
+      <Row type="flex" justify="space-around">
+        <Col span={3}>
+          <FeaturedProduct 
+            cover="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" 
+            alt="example"
+            title="Card 1"
+          ></FeaturedProduct>
+        </Col>
+        <Col span={3}>
+          <FeaturedProduct 
+            cover="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" 
+            alt="example"
+            title="Card 2"
+          ></FeaturedProduct>
+        </Col>
+        <Col span={3}>
+          <FeaturedProduct 
+            cover="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" 
+            alt="example"
+            title="Card 3"
+          ></FeaturedProduct>
+        </Col>
+        <Col span={3}>
+          <FeaturedProduct 
+            cover="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" 
+            alt="example"
+            title="Card 4"
+          ></FeaturedProduct>
         </Col>
       </Row>
     </div>
