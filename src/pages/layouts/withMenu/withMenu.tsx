@@ -7,28 +7,28 @@ export default (Page: React.FC) => (
   () => (
     <div className={Styles.container}>
       <div className={Styles.menu}>
-      <div className={Styles.user}>
-        <Avatar size={50} icon="user" />
-        <div className={Styles.user__properties}>
-          <span>User</span>
-          <span>Cerrar sesión</span>
+        <div className={Styles.user}>
+          <Avatar size={50} icon="user" />
+          <div className={Styles.user__properties}>
+            <span>User</span>
+            <Link to="/">Cerrar sesión</Link>
+          </div>
         </div>
-      </div>
         <Menu
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['billing']}
           mode="inline"
           style={{ borderRight: 0 }}
         >
-          <Menu.Item key="1">
+          <Menu.Item key="billing">
             <Link to="/"><Icon type="appstore" />Facturación</Link>
           </Menu.Item>
-          <Menu.Item key="2">  
+          <Menu.Item key="sales">  
             <Link to="/"><Icon type="appstore" />Ventas</Link>
           </Menu.Item>
-          <Menu.Item key="3">
+          <Menu.Item key="cash">
             <Link to="/"><Icon type="appstore" />Caja</Link>
           </Menu.Item>
-          <Menu.Item key="4">
+          <Menu.Item key="inventory">
             <Link to="/"><Icon type="appstore" />Inventario</Link>
           </Menu.Item>
         </Menu> 
