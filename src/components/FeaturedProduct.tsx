@@ -2,9 +2,9 @@ import React from 'react';
 import { Card } from 'antd';
 import IPropsFeaturedProduct from '../interfaces/IPropsFeaturedProduct';
 
-const { Meta } = Card;
-
 const FeaturedProduct = ({ cover, alt, title }: IPropsFeaturedProduct) => {
+  const { Meta } = Card;
+
   return (
     <Card
       cover={

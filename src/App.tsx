@@ -8,7 +8,6 @@ const App: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={Billing} />
-        <Route path="/billing" component={() => <h1>Billing</h1>} />
         <Route component={() => <h1>404 Not found</h1>} />
       </Switch>
     </Router>

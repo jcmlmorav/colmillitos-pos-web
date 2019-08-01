@@ -1,16 +1,14 @@
 import React from 'react';
 import { Avatar, Button, Icon, InputNumber, Table } from 'antd';
-import IProductInList from '../../interfaces/IProductsInList';
+import IProductInList from '../interfaces/IProductsInList';
 import { ColumnProps } from 'antd/lib/table';
-import { State } from '../../types/productsList';
+import { State } from '../types/productsList';
 
 class ProductsList extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
 
-    this.state = {
-      products: []
-    }
+    this.state = { products: [] }
   }
 
   componentDidMount() {
