@@ -1,8 +1,7 @@
-.page {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  background-color: white;
-  padding: 1rem 0;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .search { margin-bottom: 1rem; }

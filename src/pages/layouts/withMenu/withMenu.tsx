@@ -33,7 +33,9 @@ export default (Page: React.FC) => (
           </Menu.Item>
         </Menu> 
       </div>
-      <Page />
+      <div className={Styles.page}>
+        <Page />
+      </div>
     </div>
   )
 );

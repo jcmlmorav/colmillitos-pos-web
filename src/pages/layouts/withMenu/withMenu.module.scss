@@ -12,6 +12,12 @@
   border-right: 1px solid #e8e8e8;
 }
 
+.page {
+  grid-area: page;
+  background-color: white;
+  padding: 1rem 0;
+}
+
 .user {
   padding: 1rem;
   display: flex;
