@@ -11,7 +11,7 @@ const Billing: React.FC = () => {
   const Search = Input.Search;
 
   return (
-    <div className={Styles.page}>
+    <div className={Styles.container}>
       <Row>
         <Col span={16} offset={4}>
           <Search
