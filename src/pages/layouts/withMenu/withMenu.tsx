@@ -4,7 +4,10 @@ import Styles from './withMenu.module.scss';
 import { Menu, Icon, Avatar } from 'antd';
 
 export default (Page: React.FC) => (
-  () => (
+  ({ match : { path } }: {
+    match: any;
+    path: string;
+  }) => (
     <div className={Styles.container}>
       <div className={Styles.menu}>
         <div className={Styles.user}>
@@ -15,15 +18,15 @@ export default (Page: React.FC) => (
           </div>
         </div>
         <Menu
-          defaultSelectedKeys={['billing']}
+          defaultSelectedKeys={[ path ]}
           mode="inline"
           style={{ borderRight: 0 }}
         >
-          <Menu.Item key="billing">
-            <Link to="/"><Icon type="appstore" />Facturación</Link>
+          <Menu.Item key="/facturacion">
+            <Link to="/facturacion"><Icon type="calculator" />Facturación</Link>
           </Menu.Item>
-          <Menu.Item key="sales">  
-            <Link to="/"><Icon type="appstore" />Ventas</Link>
+          <Menu.Item key="/ventas">  
+            <Link to="/ventas"><Icon type="shopping" />Ventas</Link>
           </Menu.Item>
           <Menu.Item key="cash">
             <Link to="/"><Icon type="appstore" />Caja</Link>
