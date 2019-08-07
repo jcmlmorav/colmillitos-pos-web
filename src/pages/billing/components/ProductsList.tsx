@@ -1,15 +1,11 @@
 import React from 'react';
-import { Avatar, Button, Icon, InputNumber, Table } from 'antd';
-import IProductInList from '../interfaces/IProductsInList';
+import { State } from '../../../types/productsList';
+import IProductInList from '../../../interfaces/IProductsInList';
 import { ColumnProps } from 'antd/lib/table';
-import { State } from '../types/productsList';
+import { Avatar, Button, Icon, InputNumber, Table } from 'antd';
 
 class ProductsList extends React.Component<{}, State> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = { products: [] }
-  }
+  public state = { products: [] }
 
   componentDidMount() {
     const data: IProductInList[] = [
