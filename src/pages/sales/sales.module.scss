@@ -1,0 +1,39 @@
+.sales {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: black !important;
+}
+
+.sales__printButton { max-width: 10rem; margin-bottom: 1rem; }
+
+.sales__receipt {
+  max-width: 380px !important;
+  width: 380px !important;
+  font-family: monospace;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  padding: 20px 10px 10px 0;
+  box-shadow: 5px 5px 15px #ccc;
+  text-align: center;
+}
+
+p { max-width: 380px; }
+
+table { clear: both; width: 380px; }
+
+@media print {
+  .sales__printButton { display: none; }
+
+  .sales__receipt {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  p { max-width: 380px; }
+
+  table { clear: both; width: 380px; }
+}
