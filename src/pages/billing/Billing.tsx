@@ -2,10 +2,10 @@ import React from 'react';
 import withMenu from '../layouts/withMenu/withMenu';
 import withSidebar from '../layouts/withSidebar/withSidebar';
 import { Col, Input, Row } from 'antd';
-import ProductsList from '../../components/ProductsList';
-import FeaturedProduct from '../../components/FeaturedProduct';
+import ProductsList from './components/ProductsList';
+import FeaturedProduct from './components/FeaturedProduct';
 import Styles from './billing.module.scss';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
 
 const Billing: React.FC = () => {
   const Search = Input.Search;

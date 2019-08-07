@@ -2,8 +2,9 @@ import React from 'react';
 import Styles from './sales.module.scss';
 import { Button } from 'antd';
 import Receipt from './components/Receipt';
-import withSidebar from '../layouts/withSidebar/withSidebar';
 import withMenu from '../layouts/withMenu/withMenu';
+import withSidebar from '../layouts/withSidebar/withSidebar';
+import Sidebar from './components/Sidebar';
 
 const Sales: React.ElementType = () => (
   <div className={Styles.sales}>
@@ -16,4 +17,4 @@ const Sales: React.ElementType = () => (
   </div>
 );
 
-export default withMenu(withSidebar(Sales, (() => <h1>Future Sidebar</h1>)));
+export default withMenu(withSidebar(Sales, Sidebar));
