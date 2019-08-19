@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import Styles from './withMenu.module.scss';
 import { Menu, Icon, Avatar } from 'antd';
+import { Link } from "react-router-dom";
 
 export default (Page: React.FC) => (
   ({ match : { path } }: {
@@ -28,11 +28,11 @@ export default (Page: React.FC) => (
           <Menu.Item key="/ventas">  
             <Link to="/ventas"><Icon type="shopping" />Ventas</Link>
           </Menu.Item>
-          <Menu.Item key="cash">
-            <Link to="/"><Icon type="appstore" />Caja</Link>
+          <Menu.Item key="/caja">
+            <Link to="/caja"><Icon type="dollar" />Caja</Link>
           </Menu.Item>
-          <Menu.Item key="inventory">
-            <Link to="/"><Icon type="appstore" />Inventario</Link>
+          <Menu.Item key="/inventario">
+            <Link to="/inventario"><Icon type="database" />Inventario</Link>
           </Menu.Item>
         </Menu> 
       </div>
