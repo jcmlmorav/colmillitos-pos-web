@@ -1,0 +1,9 @@
+const TYPES = {
+  PRODUCTS: {
+    FETCH: 'PRODUCTS_FETCH_REQUESTED',
+    SUCCESS: 'PRODUCTS_FETCH_SUCCESS',
+    FAIL: 'PRODUCTS_FETCH_FAIL'
+  }
+};
+
+export default TYPES;

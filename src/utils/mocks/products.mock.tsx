@@ -1,29 +1,35 @@
-import IProductsInInventary from '../../interfaces/IProductsInInventary';
+import IProductDetails from '../../interfaces/IProductDetails';
 
-const PRODUCTS: IProductsInInventary[] = [
+const PRODUCTS: IProductDetails[] = [
   {
     id: 1,
-    description: 'Dog Show',
-    price: 10000,
-    image: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    quantity: 10,
-    discount: 3
+    barcode: "7702521104863",
+    description: "CAT CHOW ADULTOS DELIMIX FORTIDEFEN 500G",
+    quantity: 1,
+    price: 9500,
+    discount: 0,
+    created_at: "2019-02-16 13:00:38",
+    updated_at: "2019-05-14 18:24:00"
   },
   {
     id: 2,
-    description: 'Cat Show',
-    price: 50000,
-    image: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    quantity: 30,
-    discount: 5
+    barcode: "7702521104757",
+    description: "CAT CHOW PESO SALUDABLE FORTIDEFENSE 1KG",
+    quantity: 1,
+    price: 19400,
+    discount: 0,
+    created_at: "2019-02-16 13:03:24",
+    updated_at: "2019-04-01 17:03:17"
   },
   {
     id: 3,
-    description: 'Agility Gold',
-    price: 25000,
-    image: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    barcode: "7702521104856",
+    description: "CAT CHOW ADULTOS DELIMIX FORTIDEFE 1,5KG",
     quantity: 1,
-    discount: 0
+    price: 26900,
+    discount: 0,
+    created_at: "2019-02-16 13:06:25",
+    updated_at: "2019-04-01 17:37:16"
   }
 ];
 
