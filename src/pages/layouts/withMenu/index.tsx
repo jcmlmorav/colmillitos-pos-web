@@ -34,6 +34,9 @@ export default (Page: React.FC) => (
           <Menu.Item key="/inventario">
             <Link to="/inventario"><Icon type="database" />Inventario</Link>
           </Menu.Item>
+          <Menu.Item key="/finanzas">
+            <Link to="/finanzas"><Icon type="line-chart" />Finanzas</Link>
+          </Menu.Item>
         </Menu> 
       </MenuWrapper>
       <PageWrapper>
