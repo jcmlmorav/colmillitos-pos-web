@@ -1,7 +1,7 @@
 import React from 'react';
 import { State } from '../../../types/sales';
 import ISale from '../../../interfaces/ISale';
-import { Button, Divider, Icon, List } from 'antd';
+import { Button, Divider, List } from 'antd';
 
 class Sidebar extends React.Component<{}, State> {
   public state = { sales: [] };
@@ -38,7 +38,7 @@ class Sidebar extends React.Component<{}, State> {
                 title={ item['total'] }
                 description={ item['date'] }
               />
-              <Button><Icon type="eye" theme="twoTone" /></Button>
+              <Button type="primary" shape="circle" icon="eye" size='large' />
             </List.Item>
           )}
         />

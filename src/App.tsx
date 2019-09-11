@@ -5,6 +5,7 @@ import Billing from './pages/billing';
 import Inventary from './pages/inventary/';
 import Sales from './pages/sales';
 import Cash from './pages/cash';
+import Finances from './pages/finances';
 
 const App: React.FC = () => (
   <Router>
@@ -14,6 +15,7 @@ const App: React.FC = () => (
       <Route path="/inventario" exact component={Inventary} />
       <Route path="/ventas" exact component={Sales} />
       <Route path="/caja" exact component={Cash} />
+      <Route path="/finanzas" exact component={Finances} />
       <Route component={() => <h1>404 Not found</h1>} />
     </Switch>
   </Router>
