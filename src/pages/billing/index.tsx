@@ -1,26 +1,27 @@
 import React from 'react';
-import withMenu from '../layouts/withMenu/withMenu';
-import withSidebar from '../layouts/withSidebar/withSidebar';
+import withMenu from '../layouts/withMenu';
+import withSidebar from '../layouts/withSidebar';
 import { Col, Input, Row } from 'antd';
 import ProductsList from './components/ProductsList';
 import FeaturedProduct from './components/FeaturedProduct';
-import Styles from './billing.module.scss';
-import Sidebar from './components/sidebar/Sidebar';
+import { Wrapper, SearchWrapper } from './styles';
+import Sidebar from './components/sidebar';
 
 const Billing: React.FC = () => {
   const Search = Input.Search;
 
   return (
-    <div className={Styles.container}>
+    <Wrapper>
       <Row>
         <Col span={16} offset={4}>
-          <Search
-            placeholder="Escanee el código, busque por precio o busque por palabra clave"
-            onSearch={value => alert(`Futura busqueda: ${value}`)}
-            enterButton
-            tabIndex={0}
-            className={Styles.search}
-          />
+          <SearchWrapper>
+            <Search
+              placeholder="Escanee el código, busque por precio o busque por palabra clave"
+              onSearch={value => alert(`Futura busqueda: ${value}`)}
+              enterButton
+              tabIndex={0}
+            />
+          </SearchWrapper>
         </Col>
         <Col span={24}>
           <ProductsList />
@@ -70,7 +71,7 @@ const Billing: React.FC = () => {
           ></FeaturedProduct>
         </Col>
       </Row>
-    </div>
+    </Wrapper>
   );
 };
 

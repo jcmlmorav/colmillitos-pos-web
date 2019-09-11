@@ -27,3 +27,7 @@ export const AmountAndDiscount = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
 `;
+
+export const SearchWrapper = styled.div`
+  margin-bottom: 1rem;
+`;

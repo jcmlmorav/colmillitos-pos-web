@@ -1,22 +1,22 @@
 import React from 'react';
-import Styles from './withMenu.module.scss';
+import { Wrapper, MenuWrapper, PageWrapper, User, UserProperties } from './styles';
 import { Menu, Icon, Avatar } from 'antd';
 import { Link } from "react-router-dom";
 
 export default (Page: React.FC) => (
-  ({ match : { path } }: {
+  ({ match: { path } }: {
     match: any;
     path: string;
   }) => (
-    <div className={Styles.container}>
-      <div className={Styles.menu}>
-        <div className={Styles.user}>
+    <Wrapper>
+      <MenuWrapper>
+        <User>
           <Avatar size={50} icon="user" />
-          <div className={Styles.user__properties}>
+          <UserProperties>
             <span>User</span>
             <Link to="/">Cerrar sesión</Link>
-          </div>
-        </div>
+          </UserProperties>
+        </User>
         <Menu
           defaultSelectedKeys={[ path ]}
           mode="inline"
@@ -35,10 +35,10 @@ export default (Page: React.FC) => (
             <Link to="/inventario"><Icon type="database" />Inventario</Link>
           </Menu.Item>
         </Menu> 
-      </div>
-      <div className={Styles.page}>
+      </MenuWrapper>
+      <PageWrapper>
         <Page />
-      </div>
-    </div>
+      </PageWrapper>
+    </Wrapper>
   )
 );

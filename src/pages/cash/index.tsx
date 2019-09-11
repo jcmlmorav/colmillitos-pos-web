@@ -3,9 +3,11 @@ import IProductsInCash from '../../interfaces/IProductsInCash';
 import { ColumnProps } from 'antd/lib/table';
 import { Button, Icon, Table } from 'antd';
 import { Wrapper, Amount } from './styles';
-import Filter from './components/filter/Filter';
+import Filter from './components/filter';
 import { Typography } from 'antd';
-import withMenu from '../layouts/withMenu/withMenu';
+import withMenu from '../layouts/withMenu';
+import withSidebar from '../layouts/withSidebar';
+import Sidebar from './components/sidebar';
 
 const Cash: React.ElementType = () => {
   const [ products, setProducts ] = useState<Array<IProductsInCash>>([]);
@@ -77,4 +79,4 @@ const Cash: React.ElementType = () => {
   );
 };
 
-export default withMenu(Cash);
+export default withMenu(withSidebar(Cash, Sidebar));
