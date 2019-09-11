@@ -1,4 +1,4 @@
-export default interface IMockInventary {
+export default interface IProductsInInventary {
   id: number,
   description: string,
   price: number,

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Paragraph, TableWrapper } from './styles';
 
 const Receipt: React.ElementType = () => (
   <>
-    <p>Logo</p>
-    <p>
+    <Paragraph>Logo</Paragraph>
+    <Paragraph>
       Tienda para mascotas
       <br />
       Régimen simplificado
@@ -18,8 +19,8 @@ const Receipt: React.ElementType = () => (
       <br />
       <br />
       Fecha: 02 de Agosto de 2019
-    </p>
-    <table>
+    </Paragraph>
+    <TableWrapper>
       <thead>
         <tr>
           <th>&nbsp;</th>
@@ -38,25 +39,25 @@ const Receipt: React.ElementType = () => (
           </td>
         </tr>
       </tbody>
-    </table>
+    </TableWrapper>
     <br />
-    <p>
+    <Paragraph>
       Subtotal: $1.000
       <br />
       Ahorro: $0
-    </p>
-    <p><strong>TOTAL: $1.000</strong></p>
-    <p>
+    </Paragraph>
+    <Paragraph><strong>TOTAL: $1.000</strong></Paragraph>
+    <Paragraph>
       Efectivo: $2.000
       <br />
       Cambio: $1.000
-    </p>
+    </Paragraph>
     <br />
-    <p>
+    <Paragraph>
       Gracias por su compra
       <br />
       Visítanos en WWW.COLMILLITOS.PET
-    </p>
+    </Paragraph>
   </>
 );
 

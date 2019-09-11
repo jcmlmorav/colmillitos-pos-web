@@ -1,10 +1,10 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Billing from './pages/billing/Billing';
+import Billing from './pages/billing';
 import Inventary from './pages/inventary/';
-import Sales from './pages/sales/Sales';
-import Cash from './pages/cash/Cash';
+import Sales from './pages/sales';
+import Cash from './pages/cash';
 
 const App: React.FC = () => (
   <Router>

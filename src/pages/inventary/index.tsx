@@ -1,16 +1,16 @@
 import React from 'react';
 import { Row, Col, Input, Collapse, Avatar, Button } from 'antd';
-import Styles from './inventary.module.scss';
 import { 
   Page,
   Product,
   Price,
-  AmountAndDiscount 
+  AmountAndDiscount,
+  SearchWrapper
 } from './styles';
 import currencyFormat from '../../utils/CurrencyFormat';
-import MockInventary from '../../utils/mocks/MInventary';
-import withMenu from '../layouts/withMenu/withMenu';
-import withSidebar from '../layouts/withSidebar/withSidebar';
+import PRODUCTS from '../../utils/mocks/products.mock';
+import withMenu from '../layouts/withMenu';
+import withSidebar from '../layouts/withSidebar';
 import Sidebar from './components/Sidebar';
 
 
@@ -25,17 +25,18 @@ const Inventary: React.FC = () => {
     <Page>
       <Row>
         <Col span={16} offset={4}>
-          <Search
-            placeholder="Escanee el código, busque por precio o busque por palabra clave"
-            onSearch={value => alert(`Futura busqueda: ${value}`)}
-            enterButton
-            tabIndex={0}
-            className={Styles.search}
-          />
+          <SearchWrapper>
+            <Search
+              placeholder="Escanee el código, busque por precio o busque por palabra clave"
+              onSearch={value => alert(`Futura busqueda: ${value}`)}
+              enterButton
+              tabIndex={0}
+            />
+          </SearchWrapper>
         </Col>
         <Col span={24}>
           <Collapse expandIconPosition="right">
-            {MockInventary.map((_product, i) => (          
+            {PRODUCTS.map((_product, i) => (          
               <Panel header={
                 <Product>
                   <span>{_product.id}</span>

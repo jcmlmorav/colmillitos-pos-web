@@ -1,6 +1,6 @@
-import IMockInventary from '../../interfaces/IMockInventary';
+import IProductsInInventary from '../../interfaces/IProductsInInventary';
 
-const MockInventary: IMockInventary[] = [
+const PRODUCTS: IProductsInInventary[] = [
   {
     id: 1,
     description: 'Dog Show',
@@ -16,7 +16,7 @@ const MockInventary: IMockInventary[] = [
     image: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     quantity: 30,
     discount: 5
-  }, 
+  },
   {
     id: 3,
     description: 'Agility Gold',
@@ -27,4 +27,4 @@ const MockInventary: IMockInventary[] = [
   }
 ];
 
-export default MockInventary;
+export default PRODUCTS;

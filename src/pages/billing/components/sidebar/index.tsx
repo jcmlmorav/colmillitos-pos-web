@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Descriptions, Divider, InputNumber, Radio } from 'antd';
-import Styles from './sidebar.module.scss';
+import { ButtonWrapper, ButtonElement } from './styles';
 
 const Sidebar: React.FC = () => {
   return (
@@ -53,14 +53,18 @@ const Sidebar: React.FC = () => {
           $12,500
         </Descriptions.Item>
       </Descriptions>
-      <div className={Styles.buttonContainer}>
-        <Button type="primary" block>
-          Finalizar compra
-        </Button>
-        <Button block>
-          Cancelar compra
-        </Button>
-      </div>
+      <ButtonWrapper>
+        <ButtonElement>
+          <Button type="primary" block>
+            Finalizar compra
+          </Button>
+        </ButtonElement>
+        <ButtonElement>
+          <Button block>
+            Cancelar compra
+          </Button>
+        </ButtonElement>
+      </ButtonWrapper>
     </React.Fragment>
   );
 };
