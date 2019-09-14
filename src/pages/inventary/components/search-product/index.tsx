@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+import searchProductProps from '../../../../types/searchProductProps';
 import { Wrapper } from './styles';
 import { Input } from 'antd';
 
-const SearchProduct = () => {
+const SearchProduct = ({onSearch}: searchProductProps) => {
   useEffect(() => {
     const searchProductInput = document.getElementById('search-product');
     if (searchProductInput) searchProductInput.focus();
@@ -13,7 +14,7 @@ const SearchProduct = () => {
       <Input.Search
         id="search-product"
         placeholder="Escanee el código, busque por precio o por palabra clave"
-        onSearch={value => alert(`Futura busqueda: ${value}`)}
+        onSearch={onSearch}
         enterButton
         tabIndex={0}
       />
