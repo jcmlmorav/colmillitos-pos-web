@@ -10,10 +10,15 @@ interface Props {
 
 const ProductsInfo = ({ products }: Props) => {
   let content = null;
+  let activeKey = '0';
+
+  if (products.length === 1) {
+    activeKey = `${products[0].id}`;
+  }
 
   if (products.length) {
     content = (
-      <Collapse expandIconPosition="right">
+      <Collapse expandIconPosition="right" defaultActiveKey={[activeKey]}>
         {products.map((product) => (          
           <Collapse.Panel header={
             <InfoWrapper>
@@ -45,7 +50,6 @@ const ProductsInfo = ({ products }: Props) => {
       <Result
         icon={<Icon type="notification" theme="twoTone" />}
         title="No se encontraron productos registrados"
-        extra={<Button type="primary">Agregar producto</Button>}
         status="info"
       />
     );
