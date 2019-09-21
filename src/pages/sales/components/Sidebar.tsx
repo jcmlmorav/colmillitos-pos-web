@@ -1,7 +1,10 @@
 import React from 'react';
-import { State } from '../../../types/sales';
 import ISale from '../../../interfaces/ISale';
 import { Button, Divider, List } from 'antd';
+
+type State = {
+  sales: ISale[]
+};
 
 class Sidebar extends React.Component<{}, State> {
   public state = { sales: [] };
