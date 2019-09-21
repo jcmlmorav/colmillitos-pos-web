@@ -1,8 +1,11 @@
 import React from 'react';
-import { State } from '../../../types/productsList';
 import IProductInList from '../../../interfaces/IProductsInList';
 import { ColumnProps } from 'antd/lib/table';
 import { Avatar, Button, Icon, InputNumber, Table } from 'antd';
+
+type State = {
+  products: IProductInList[]
+};
 
 class ProductsList extends React.Component<{}, State> {
   public state = { products: [] }
