@@ -13,3 +13,7 @@ export const SearchProductWrapper = styled.div`
 export const SearchWrapper = styled.div`
   margin-bottom: 1rem;
 `;
+
+export const CreateProductWrapper = styled.div`
+  margin-top: 1rem;
+`;
