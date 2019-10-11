@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { setFocus } from '../../../../utils/functions';
 import { Collapse, Avatar, Button, Modal, Result, Icon } from 'antd';
 import IProductDetails from '../../../../interfaces/IProductDetails';
 import { InfoWrapper, PriceWrapper, DetailsWrapper } from './styles';
@@ -28,13 +29,6 @@ const ProductsInfo = ({ products }: Props) => {
   const handleSubmit = () => {
     setFocus('search-product');
     setModalOpen(false);
-  }
-
-  const setFocus = (id: string): void => {
-    setTimeout(() => {
-      const input = document.getElementById(id);
-      if (input) input.focus();
-    }, 1000);
   }
 
   const onProductSelected = (product: Record<string, any>) => {
