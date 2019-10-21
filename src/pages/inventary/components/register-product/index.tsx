@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, InputNumber } from 'antd';
 import { FormItemWrapper, FormGroupWrapper, SubmitWrapper } from './styles';
 
 type Props = {
   handleSubmit: Function;
+  handleCancel: Function;
   clean: boolean;
 };
 
-const RegisterProduct = ({ handleSubmit, clean }: Props) => {
+const RegisterProduct = ({ handleSubmit, handleCancel, clean }: Props) => {
   const PRODUCT = {
     barcode: '',
     description: '',
@@ -25,8 +26,13 @@ const RegisterProduct = ({ handleSubmit, clean }: Props) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement, MouseEvent>) => {
     event.preventDefault();
-    handleSubmit();
+    handleSubmit(product);
   };
+
+  const onCancel = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    event.preventDefault();
+    handleCancel();
+  }
 
   const handleChange = (event: Record<string, any>) => {
     const key = event.target.name;
@@ -41,28 +47,82 @@ const RegisterProduct = ({ handleSubmit, clean }: Props) => {
     <Form onSubmit={onSubmit}>
       <FormItemWrapper>
         <span>Código</span>
-        <Input autoFocus id="barcode" name="barcode" value={product.barcode} onChange={handleChange} />
+        <Input
+          autoFocus
+          id="barcode"
+          name="barcode"
+          maxLength={100}
+          value={product.barcode}
+          onChange={handleChange}
+        />
       </FormItemWrapper>
       <FormItemWrapper>
         <span>Descripción</span>
-        <Input name="description" value={product.description} onChange={handleChange} />
+        <Input
+          name="description"
+          maxLength={40}
+          value={product.description}
+          onChange={handleChange}
+        />
       </FormItemWrapper>
       <FormGroupWrapper>
         <FormItemWrapper>
           <span>Stock</span>
-          <Input name="quantity" value={product.quantity} onChange={handleChange} />
+          <InputNumber
+            name="quantity"
+            min={0}
+            value={product.quantity}
+            onChange={(value: number | undefined) => (
+              handleChange({
+                target: {
+                  name: 'quantity',
+                  value
+                }
+              })
+            )}
+          />
         </FormItemWrapper>
         <FormItemWrapper>
           <span>Precio</span>
-          <Input prefix="$" name="price" value={product.price} onChange={handleChange} />
+          <InputNumber
+            name="price"
+            min={0}
+            formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            parser={value => value ? value.replace(/\$\s?|(,*)/g, '') : 0}
+            value={product.price}
+            onChange={(value: number | undefined) => (
+              handleChange({
+                target: {
+                  name: 'price',
+                  value
+                }
+              })
+            )}
+          />
         </FormItemWrapper>
         <FormItemWrapper>
           <span>Descuento</span>
-          <Input prefix="%" name="discount" value={product.discount} onChange={handleChange} />
+          <InputNumber
+            name="discount"
+            min={0}
+            max={100}
+            formatter={value => `${value}%`}
+            parser={value => value ? value.replace('%', '') : 0}
+            value={product.discount}
+            onChange={(value: number | undefined) => (
+              handleChange({
+                target: {
+                  name: 'discount',
+                  value
+                }
+              })
+            )}
+          />
         </FormItemWrapper>
       </FormGroupWrapper>
       <SubmitWrapper>
-        <Button htmlType="submit">Registrar</Button>
+        <Button onClick={onCancel}>Cancelar</Button>
+        <Button htmlType="submit" type="primary" loading={false}>Registrar</Button>
       </SubmitWrapper>
     </Form>
   );
