@@ -39,9 +39,10 @@ const Inventary: React.FC = () => {
     setModalOpen(false);
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (product: any) => {
     setFocus('search-product');
     setModalOpen(false);
+    console.log('Producto a registrar:', product);
   }
 
   const onModalOpen = () => {
@@ -74,16 +75,9 @@ const Inventary: React.FC = () => {
         title="Registrar producto"
         onOk={handleSubmit}
         onCancel={handleCancel}
-        footer={[
-          <Button key="back" onClick={handleCancel}>
-            Cancelar
-          </Button>,
-          <Button key="submit" type="primary" loading={false} onClick={handleSubmit}>
-            Registrar
-          </Button>
-        ]}
+        footer={[]}
       >
-        <RegisterProduct handleSubmit={handleSubmit} clean={modalOpen} />
+        <RegisterProduct handleSubmit={handleSubmit} handleCancel={handleCancel} clean={modalOpen} />
       </Modal>
     </Wrapper>
   );

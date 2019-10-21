@@ -5,6 +5,6 @@ export default interface IProductDetails {
   quantity: number,
   price: number,
   discount: number,
-  created_at: string,
-  updated_at: string
+  created_at?: string,
+  updated_at?: string
 };
